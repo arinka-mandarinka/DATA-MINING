@@ -1,0 +1,18 @@
+﻿,js,js-delayed
+"Ответ сервера (requests): размер HTML, байт",5808,6014
+Ответ сервера: найдено .quote,0,0
+Целевой текст в исходном HTML,найден,найден
+Где именно найден,<script>: var data = [...] (10 объектов),<script>: var data = [...] (10 объектов)
+JSON-LD / __NEXT_DATA__,False / False,False / False
+Таймер отрисовки в скрипте,нет,"setTimeout(function() { var data = [ { ""tags"": [ ""change"", ""deep-thoughts"", ""thinking"", ""world"" "
+Браузер: найдено .quote,10,10
+"Браузер: размер DOM после JS, байт",8940,9146
+"Браузер: время до первой цитаты, с",2.04,11.71
+Network: всего запросов,7,7
+Network: Fetch/XHR (метод URL),нет XHR/fetch-запросов,нет XHR/fetch-запросов
+Network: типы ресурсов,"{'document': 1, 'stylesheet': 3, 'script': 1, 'font': 2}","{'document': 1, 'stylesheet': 3, 'script': 1, 'font': 2}"
+JS отключён: найдено .quote,0,0
+JS отключён: доступна ссылка Next / Login,True / True,True / True
+JS отключён: начало видимого текста,Quotes to Scrape Login Next → Quotes by: GoodReads.com Made with ❤ by Zyte,Quotes to Scrape Login Next → Quotes by: GoodReads.com Made with ❤ by Zyte
+Контроль (статическая версия): найдено .quote,10,10
+Вывод,,

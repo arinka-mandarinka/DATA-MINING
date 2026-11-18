@@ -1,0 +1,73 @@
+﻿issue_number,title,state,is_closed,author_login,comments,labels,created_at,closed_at,lifetime_hours,collected_at
+8297,robots.txt enforcement fails OPEN for 2nd+ concurrent same-host request (RobotsTxtMiddleware + Twisted Deferred.asFuture()),open,FALSE,josephdatapro,6,bug,2026-10-09T15:17:24Z,,,2026-10-13T11:21:29.576Z
+7568,Add asynchronous support to `spider_idle` signal and other synchronous signals,open,FALSE,Laerte,4,enhancement; asyncio,2026-06-03T17:51:32Z,,,2026-10-13T11:21:29.583Z
+1988,"""Content-Encoding"" header gets stripped from response headers",open,FALSE,mborho,19,enhancement; good first issue,2016-05-12T15:26:02Z,,,2026-10-13T11:21:29.591Z
+6552,Document @inthread,closed,TRUE,Gallaecio,6,enhancement; docs,2024-11-19T08:57:30Z,2026-10-09T15:18:28Z,16542.35,2026-10-13T11:21:29.598Z
+6737,Content-Length header not being calculated automatically,closed,TRUE,arielpontes,6,,2025-03-17T09:47:11Z,2026-10-09T15:17:34Z,13709.51,2026-10-13T11:21:29.606Z
+6742,Apply restartable twisted reactor (working code sample inside),closed,TRUE,GeorgeA92,3,,2025-03-21T13:52:31Z,2026-10-09T15:17:20Z,13609.41,2026-10-13T11:21:29.613Z
+7251,Investigate non-Twisted-based alternatives to `TelnetConsole`,closed,TRUE,wRAR,3,enhancement; asyncio,2026-02-12T20:52:04Z,2026-10-09T15:16:57Z,5730.41,2026-10-13T11:21:29.621Z
+8291,"Request.from_curl() incorrectly strips a leading ""$"" from request data",open,FALSE,archiep867-sys,3,,2026-10-08T05:35:32Z,,,2026-10-13T11:21:29.629Z
+3666,Request priority not guaranteed with the default scheduler configurations due to different queues (memory/disk) used.,closed,TRUE,starrify,1,bug,2019-03-08T12:18:34Z,2026-10-09T07:12:01Z,66522.89,2026-10-13T11:21:29.635Z
+7025,Discourage using `CrawlSpider`,closed,TRUE,wRAR,4,enhancement; docs; discuss,2025-08-23T19:22:12Z,2026-10-08T14:17:06Z,9858.92,2026-10-13T11:21:29.645Z
+36,Add command line option for doing POSTs,closed,TRUE,shaneaevans,12,enhancement,2011-09-09T05:44:56Z,2026-10-08T14:10:53Z,132200.43,2026-10-13T11:21:29.651Z
+5580,Feed options: replace overwrite with mode,closed,TRUE,Gallaecio,1,enhancement; discuss,2022-07-28T16:57:19Z,2026-10-08T13:34:05Z,36788.61,2026-10-13T11:21:29.660Z
+6916,Refactor engine starting and stopping flow,closed,TRUE,wRAR,3,enhancement,2025-06-26T10:28:46Z,2026-10-07T17:45:51Z,11239.28,2026-10-13T11:21:29.665Z
+4999,spider middleware process_spider_output() doesn't capture item yielded by spider request errback if it was called by downloader,closed,TRUE,kalessin,2,bug,2021-02-22T15:48:25Z,2026-10-05T08:32:23Z,49216.73,2026-10-13T11:21:29.674Z
+3614,_tunnelReadyDeferred need canceller to close connection like twisted do,closed,TRUE,baby5,1,discuss,2019-02-03T09:13:25Z,2026-10-04T18:22:50Z,67209.16,2026-10-13T11:21:29.680Z
+4070,MEMUSAGE_ENABLED - default,closed,TRUE,mohmad-null,7,enhancement; discuss,2019-10-11T08:57:10Z,2026-10-04T15:05:21Z,61206.14,2026-10-13T11:21:29.687Z
+5510,Support per-request download handler override,closed,TRUE,Gallaecio,10,enhancement; discuss,2022-05-31T16:04:06Z,2026-10-04T15:02:05Z,38086.97,2026-10-13T11:21:29.695Z
+6895,request slips through dupefilter after retry/redirect,closed,TRUE,ben-freist,13,,2025-06-20T13:59:41Z,2026-10-04T14:24:00Z,11304.41,2026-10-13T11:21:29.703Z
+3991,Create scrapy command to get the equivalent Request from a cURL command,closed,TRUE,noviluni,12,enhancement; discuss,2019-08-30T08:28:43Z,2026-10-04T14:23:44Z,62213.92,2026-10-13T11:21:29.717Z
+1478,Adding support to FTP file listing,closed,TRUE,bernardotorres,0,enhancement,2015-09-03T20:24:27Z,2026-10-04T13:34:24Z,97169.17,2026-10-13T11:21:29.728Z
+6705,Provide coroutine/Future alternatives to public Deferred APIs,closed,TRUE,wRAR,1,enhancement; asyncio,2025-03-08T17:15:47Z,2026-10-04T11:02:30Z,13793.78,2026-10-13T11:21:29.734Z
+6779,Add support for `async def store()` in custom feed storages,closed,TRUE,wRAR,3,enhancement; asyncio,2025-05-07T13:50:30Z,2026-10-04T11:02:25Z,12357.2,2026-10-13T11:21:29.747Z
+5622,Async support for Feed Exports components,closed,TRUE,suspectinside,5,enhancement; asyncio,2022-09-09T01:26:33Z,2026-10-04T10:42:24Z,35673.26,2026-10-13T11:21:29.752Z
+6362,Possible improvement:  this check depends on scrapy response properly converted to XmlResponse instance ,closed,TRUE,DharmeshPandav,3,enhancement,2024-05-14T10:52:16Z,2026-10-04T10:13:05Z,20951.35,2026-10-13T11:21:29.759Z
+2231,Make logging configuration (more) customizable,closed,TRUE,redapple,6,discuss; logging,2016-09-13T12:16:18Z,2026-10-04T10:12:15Z,88149.93,2026-10-13T11:21:29.765Z
+7010,scrapy settings --get does not account for add-ons,closed,TRUE,Gallaecio,4,,2025-08-18T12:31:36Z,2026-10-04T09:09:45Z,9884.64,2026-10-13T11:21:29.770Z
+4788,Document how to use custom Amazon S3 headers in FileStorage,closed,TRUE,Gallaecio,2,enhancement; docs; S3; media pipelines,2020-09-16T10:16:31Z,2026-10-04T09:05:41Z,53014.82,2026-10-13T11:21:29.777Z
+7752,Embedded `ipykernel`,open,FALSE,wRAR,2,enhancement,2026-07-20T19:04:37Z,,,2026-10-13T11:21:29.783Z
+4919,"Explicit ""content-length"" in header leads to incorrect HTTP request",closed,TRUE,dkarelov,9,enhancement; http,2020-12-09T10:19:08Z,2026-10-02T19:26:55Z,50961.13,2026-10-13T11:21:29.789Z
+8256,Per-domain / per-slot concurrency is not enforced with the asyncio reactor when download delay is 0,closed,TRUE,kieron-centric-pricing,3,,2026-10-01T15:27:16Z,2026-10-01T18:28:57Z,3.03,2026-10-13T11:21:29.795Z
+5153,Restarting a crawl using with JOBDIR overwrites feed files that use batch_id,open,FALSE,rec,6,help wanted,2021-05-19T21:52:35Z,,,2026-10-13T11:21:29.801Z
+5307,Duplicates filtering and RAM usage,closed,TRUE,atreyasha,16,enhancement; discuss,2021-11-03T13:06:21Z,2026-10-01T18:38:37Z,43037.54,2026-10-13T11:21:29.808Z
+2711,Scrapy capitalizes headers for request,closed,TRUE,kspiridonova,12,enhancement; help wanted; http; upstream issue,2017-04-15T15:00:46Z,2026-10-01T18:28:37Z,82947.46,2026-10-13T11:21:29.813Z
+4479,Sitemap spider does not resume though JOBDIR is set,closed,TRUE,Arregator,7,bug,2020-04-09T18:54:54Z,2026-10-01T17:39:31Z,56782.74,2026-10-13T11:21:29.818Z
+1523,engine_started vs spider_opened,closed,TRUE,kmike,4,enhancement; docs,2015-10-03T11:48:05Z,2026-09-30T16:19:05Z,96364.52,2026-10-13T11:21:29.826Z
+6990,Add a signal (request_ignored),closed,TRUE,jingttkx,5,enhancement,2025-08-06T13:40:49Z,2026-09-30T16:09:32Z,10082.48,2026-10-13T11:21:29.831Z
+2977,Response data is not released after processing?,closed,TRUE,netcaf,5,performance,2017-10-26T13:15:22Z,2026-09-30T14:07:28Z,78264.87,2026-10-13T11:21:29.837Z
+2186,move more functions from scrapy.utils.url to w3lib,closed,TRUE,kmike,8,help wanted,2016-08-19T13:23:06Z,2026-09-30T13:24:18Z,88656.02,2026-10-13T11:21:29.843Z
+1576,logger missing spider name,closed,TRUE,jschilling1,9,logging,2015-11-01T16:50:53Z,2026-09-27T18:52:33Z,95594.03,2026-10-13T11:21:29.849Z
+5182,Extreme performance of the waste when CONCURRENT_ITEMS is large,closed,TRUE,xwzp,9,bug; performance,2021-06-17T03:13:10Z,2026-09-27T15:36:59Z,46284.4,2026-10-13T11:21:29.865Z
+5905,Add item_processors feature to Scrapy FeedExporter extension,closed,TRUE,VMRuiz,4,enhancement,2023-04-21T08:07:36Z,2026-09-27T09:52:08Z,30121.74,2026-10-13T11:21:29.872Z
+4979,"LinkExtractor does not extract href=""javascript:xxx"" links",closed,TRUE,gmargari,1,enhancement; link extraction,2021-02-06T18:12:09Z,2026-09-27T09:22:19Z,49407.17,2026-10-13T11:21:29.878Z
+939,Media pipeline problem,closed,TRUE,pczhaoyun,6,enhancement; media pipelines,2014-11-05T05:21:26Z,2026-09-27T09:21:22Z,104260,2026-10-13T11:21:29.884Z
+5011,Enable to configure the timeout for feed exporters,closed,TRUE,alepuccetti,1,enhancement,2021-02-25T16:22:11Z,2026-09-27T09:20:02Z,48952.96,2026-10-13T11:21:29.892Z
+8186,Fix timezone handling in `FilesPipeline` stores,closed,TRUE,wRAR,0,bug; media pipelines,2026-09-20T18:54:55Z,2026-09-27T09:13:23Z,158.31,2026-10-13T11:21:29.898Z
+5078,spider_error signal is not called on an exception in DownloaderMiddlewares,open,FALSE,adsdt,6,enhancement,2021-04-04T22:41:49Z,,,2026-10-13T11:21:29.904Z
+1241,Provide a way to propagate an exit code from a Spider,closed,TRUE,nramirezuy,4,enhancement,2015-05-18T17:20:05Z,2026-09-24T14:16:09Z,99524.93,2026-10-13T11:21:29.911Z
+7790,Let downloader middlewares process exceptions from process_response(),closed,TRUE,AdrianAtZyte,0,enhancement; discuss,2026-07-27T11:10:33Z,2026-09-24T11:29:48Z,1416.32,2026-10-13T11:21:29.917Z
+3506,retry middleware add EOFError,closed,TRUE,baby5,5,enhancement,2018-11-26T03:14:55Z,2026-09-24T11:29:48Z,68624.25,2026-10-13T11:21:29.923Z
+2578,Raising CloseSpider from DownloaderMiddleware doesn't work,closed,TRUE,philonor,11,enhancement,2017-02-20T16:32:07Z,2026-09-24T11:29:47Z,84066.96,2026-10-13T11:21:29.929Z
+1900,RetryMiddleware doesn't actually retry HttpCompressionMiddleware errors,closed,TRUE,ArturGaspar,1,bug,2016-03-31T15:31:46Z,2026-09-24T11:29:47Z,91891.97,2026-10-13T11:21:29.934Z
+2089,`FeedExporter` extension should throw when misconfigured,closed,TRUE,rampage644,2,discuss,2016-07-05T14:25:00Z,2026-09-22T10:33:26Z,89540.14,2026-10-13T11:21:29.941Z
+1609,Tracebacks are wrongfully written to stderr,closed,TRUE,brunsgaard,7,logging,2015-11-20T16:22:26Z,2026-09-22T10:08:58Z,95009.78,2026-10-13T11:21:29.946Z
+522,should spider.allowed_domains match same-origin policy?,closed,TRUE,nyov,2,enhancement; discuss; stale,2014-01-10T01:46:36Z,2026-09-22T10:07:50Z,111320.35,2026-10-13T11:21:29.952Z
+1777,Scrapy as a library,closed,TRUE,nyov,9,discuss,2016-02-14T18:39:36Z,2026-09-22T09:50:15Z,92943.18,2026-10-13T11:21:29.958Z
+1705,Image pipeline should allow to decide whether to auto-convert to jpg or not,closed,TRUE,ddebernardy,4,discuss; media pipelines,2016-01-21T09:21:42Z,2026-09-22T09:39:11Z,93528.29,2026-10-13T11:21:29.964Z
+2297,Order of HttpCacheMiddleware vs. RetryMiddleware,closed,TRUE,ilovenwd,2,backward-incompatible; discuss,2016-09-30T05:35:01Z,2026-09-22T09:37:51Z,87460.05,2026-10-13T11:21:29.969Z
+965,Sitemap spider support for URLs beginning with double slash,closed,TRUE,apogre,6,enhancement,2014-12-05T02:24:27Z,2026-09-22T09:35:26Z,103423.18,2026-10-13T11:21:29.977Z
+1097,dynamic project configuration through scrapy cmdline (idea),closed,TRUE,nyov,1,enhancement,2015-03-24T00:50:10Z,2026-09-22T09:19:29Z,100808.49,2026-10-13T11:21:29.982Z
+1113,canonicalize url - de-duplicate args (avoid some infinite loops),closed,TRUE,jvanasco,2,discuss,2015-03-28T01:36:45Z,2026-09-22T07:50:07Z,100710.22,2026-10-13T11:21:29.988Z
+988,A clock signal.,closed,TRUE,sardok,1,enhancement; discuss,2014-12-17T19:44:39Z,2026-09-22T06:54:05Z,103115.16,2026-10-13T11:21:29.994Z
+40,support for two-legged OAuth ,closed,TRUE,idoshilon,2,enhancement; discuss; stale,2011-09-14T22:44:05Z,2026-09-22T06:18:36Z,131671.58,2026-10-13T11:21:30.000Z
+1551,Exceptions occuring in the logger do not invoke the debugger.,closed,TRUE,Digenis,8,,2015-10-20T13:18:14Z,2026-09-22T06:17:36Z,95752.99,2026-10-13T11:21:30.007Z
+1868,Allow downloader middleware process_response method to yield multiple Responses,closed,TRUE,dizlv,5,enhancement; discuss,2016-03-17T13:37:49Z,2026-09-22T06:17:31Z,92176.66,2026-10-13T11:21:30.012Z
+1211,Allow to override `DefaultSpider` by setting,open,FALSE,rmax,4,enhancement,2015-05-06T00:55:12Z,,,2026-10-13T11:21:30.018Z
+1734,setup non-scrapinghub emails for reporting COC problems,open,FALSE,kmike,1,enhancement,2016-01-27T12:57:48Z,,,2026-10-13T11:21:30.024Z
+1977,scrapy logging with python logging module,closed,TRUE,sergei-sh,2,logging,2016-05-11T03:51:35Z,2026-09-22T02:07:21Z,90862.26,2026-10-13T11:21:30.030Z
+5906,Add possibility to use Selector (bytes) added in parsel 1.8.0.,closed,TRUE,GeorgeA92,2,enhancement; performance,2023-04-21T10:59:37Z,2026-09-21T17:56:26Z,29982.95,2026-10-13T11:21:30.035Z
+1401,TextResponse and BinaryResponse types,closed,TRUE,nyov,2,discuss,2015-08-01T06:36:52Z,2026-09-21T17:53:38Z,97667.28,2026-10-13T11:21:30.042Z
+7791,Add a way to keep the engine running after the spider has finished,open,FALSE,wRAR,5,enhancement,2026-07-27T14:26:19Z,,,2026-10-13T11:21:30.047Z
+1845,run spider from within scrapy shell (when shell is activated from within project folder path),closed,TRUE,rosnk,7,enhancement,2016-03-04T17:33:39Z,2026-09-21T15:43:28Z,92470.16,2026-10-13T11:21:30.053Z
+2592,Improving headers values decoding (utf-8 vs latin1),closed,TRUE,rmax,2,http,2017-02-23T20:49:23Z,2026-09-21T15:15:33Z,83922.44,2026-10-13T11:21:30.060Z

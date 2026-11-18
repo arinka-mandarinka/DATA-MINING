@@ -1,0 +1,2 @@
+﻿error_at,workflow,execution_id,http_code,message
+2026-10-13T11:24:39.184Z,Lab3 — GitHub issues → CSV,2,,"404 - ""{""message"":""Not Found"",""documentation_url"":""https://docs.github.com/rest"",""status"":""404""}"""
