@@ -1,0 +1,481 @@
+{
+  "name": "Lab5_Variant2_Books_Categories_Murashova",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 5
+            }
+          ]
+        }
+      },
+      "id": "3aec15ec-b101-47a2-a403-411e94ca501e",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -16,
+        176
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Уровень 1: 2 страницы категории Fantasy (20 + 20 = 40 книг, >= 30 по условию)\nreturn [\n  {\n    json: {\n      category_from_menu: 'Fantasy',\n      list_page: 'https://books.toscrape.com/catalogue/category/books/fantasy_19/page-1.html'\n    }\n  },\n  {\n    json: {\n      category_from_menu: 'Fantasy',\n      list_page: 'https://books.toscrape.com/catalogue/category/books/fantasy_19/page-2.html'\n    }\n  }\n];"
+      },
+      "id": "2e7171be-48a9-4fc4-adaf-e1d715d83b0f",
+      "name": "Category Pages (Level 1)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        176
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.list_page }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "Lab5BooksCrawler-n8n/1.0 (Educational project; Murashova Arina; Variant 2)"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          },
+          "timeout": 20000
+        }
+      },
+      "id": "6909f582-90a9-4f9c-a9c8-99e99e83dc47",
+      "name": "HTTP Request (List Page)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        432,
+        176
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 1000,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "extractHtmlContent",
+        "extractionValues": {
+          "values": [
+            {
+              "key": "hrefs",
+              "cssSelector": "article.product_pod h3 a",
+              "returnValue": "attribute",
+              "attribute": "href",
+              "returnArray": true
+            },
+            {
+              "key": "list_prices",
+              "cssSelector": "article.product_pod p.price_color",
+              "returnArray": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2a037b08-8a59-4701-a20f-a115cf0f4ddb",
+      "name": "HTML Extract (Cards)",
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1.2,
+      "position": [
+        688,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const results = [];\nfor (let idx = 0; idx < $input.all().length; idx++) {\n  const item = $input.all()[idx].json;\n  const hrefs = item.hrefs || [];\n  const prices = item.list_prices || [];\n  const pageInfo = $('Category Pages (Level 1)').all()[idx]?.json || {};\n  const cards = hrefs.map((href, i) => {\n    const cleanPath = String(href).replace(/^(\\.\\.\\/)+/, '');\n    return {\n      url: 'https://books.toscrape.com/catalogue/' + cleanPath,\n      list_price_raw: prices[i] || null,\n      category_from_menu: pageInfo.category_from_menu || 'Fantasy',\n      list_page: pageInfo.list_page || ''\n    };\n  });\n  results.push({ json: { cards } });\n}\nreturn results;"
+      },
+      "id": "fd31a4b6-d02c-4aa7-8234-e033ee70f94f",
+      "name": "Build Card URLs",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        896,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "cards",
+        "options": {}
+      },
+      "id": "3da6a2df-84ff-42aa-a3d7-bb71b808ce07",
+      "name": "Split Out",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "batchSize": 5,
+        "options": {}
+      },
+      "id": "439ce070-f31c-42ea-b9ac-99075101d06d",
+      "name": "Loop Over Items",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1344,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "Lab5BooksCrawler-n8n/1.0 (Educational project; Murashova Arina; Variant 2)"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          },
+          "timeout": 20000
+        }
+      },
+      "id": "dabd3b8e-72c3-46a3-ac87-3c32566163a5",
+      "name": "HTTP Request (Book Card)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1584,
+        240
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 1000,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "extractHtmlContent",
+        "extractionValues": {
+          "values": [
+            {
+              "key": "title",
+              "cssSelector": "div.product_main h1"
+            },
+            {
+              "key": "price_raw",
+              "cssSelector": "div.product_main p.price_color"
+            },
+            {
+              "key": "rating_raw",
+              "cssSelector": "div.product_main p.star-rating",
+              "returnValue": "attribute",
+              "attribute": "class"
+            },
+            {
+              "key": "table_keys",
+              "cssSelector": "table.table-striped tr th",
+              "returnArray": true
+            },
+            {
+              "key": "table_vals",
+              "cssSelector": "table.table-striped tr td",
+              "returnArray": true
+            },
+            {
+              "key": "breadcrumbs",
+              "cssSelector": "ul.breadcrumb li a",
+              "returnArray": true
+            },
+            {
+              "key": "description",
+              "cssSelector": "#product_description + p"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "74cfa011-c98d-4e6a-a6c3-1953c3050b73",
+      "name": "HTML Extract (Book Details)",
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1.2,
+      "position": [
+        1824,
+        208
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const RATING_MAP = { One: 1, Two: 2, Three: 3, Four: 4, Five: 5 };\nconst parsePrice = (raw) => {\n  const cleaned = String(raw || '').replace(/[^\\d.]/g, '');\n  return cleaned ? Number(parseFloat(cleaned).toFixed(2)) : null;\n};\n\nconst loopItems = $('Loop Over Items').all();\nconst out = [];\n\nfor (let i = 0; i < $input.all().length; i++) {\n  const d = $input.all()[i].json;\n  const ctx = loopItems[i]?.json || {};\n  const keys = d.table_keys || [];\n  const vals = d.table_vals || [];\n  const table = {};\n  keys.forEach((k, idx) => { table[String(k).trim()] = String(vals[idx] || '').trim(); });\n\n  const avail = table['Availability'] || '';\n  const stockMatch = avail.match(/(\\d+)/);\n  const ratingTokens = String(d.rating_raw || '').trim().split(/\\s+/);\n  const breadcrumbs = (d.breadcrumbs || []).map(s => String(s).trim()).filter(Boolean);\n\n  out.push({\n    json: {\n      upc: (table['UPC'] || '').toLowerCase(),\n      title: String(d.title || '').trim(),\n      price: parsePrice(d.price_raw),\n      price_excl_tax: parsePrice(table['Price (excl. tax)']),\n      stock: stockMatch ? parseInt(stockMatch[1], 10) : 0,\n      rating: RATING_MAP[ratingTokens[ratingTokens.length - 1]] || null,\n      reviews: parseInt(table['Number of reviews'] || '0', 10) || 0,\n      category: breadcrumbs.length >= 3 ? breadcrumbs[breadcrumbs.length - 1] : null,\n      category_from_menu: ctx.category_from_menu || 'Fantasy',\n      description: d.description ? String(d.description).trim() : null,\n      url: ctx.url || '',\n      list_page: ctx.list_page || '',\n      scraped_at: new Date().toISOString()\n    }\n  });\n}\nreturn out;"
+      },
+      "id": "723614a3-5f93-44e1-a229-1f4e6f44d4b4",
+      "name": "Clean & Type Fields",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2048,
+        208
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 1
+      },
+      "id": "589a8b62-50d7-4917-9275-11f4bab4b00e",
+      "name": "Wait (Politeness Delay)",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2256,
+        208
+      ],
+      "webhookId": "968c5e9c-0ea1-427d-a044-66f8052d6688"
+    },
+    {
+      "parameters": {
+        "compare": "selectedFields",
+        "fieldsToCompare": "upc",
+        "options": {}
+      },
+      "id": "30e79827-0c7b-42e1-b596-c4db07abf406",
+      "name": "Remove Duplicates (by UPC)",
+      "type": "n8n-nodes-base.removeDuplicates",
+      "typeVersion": 2,
+      "position": [
+        1584,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "options": {
+          "fileName": "nocode_result.csv"
+        }
+      },
+      "id": "3d24c5bb-fc0b-428a-bce6-73266c7846bf",
+      "name": "Convert to CSV",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1824,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "err-msg",
+              "name": "alert_message",
+              "value": "=Ошибка HTTP-запроса в n8n workflow: {{ $json.error?.message || 'Unknown error' }}",
+              "type": "string"
+            },
+            {
+              "id": "err-time",
+              "name": "timestamp",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e2beb986-6b34-4864-a0a2-410f61b3c626",
+      "name": "Error Notification",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1760,
+        464
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Category Pages (Level 1)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Category Pages (Level 1)": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request (List Page)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request (List Page)": {
+      "main": [
+        [
+          {
+            "node": "HTML Extract (Cards)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML Extract (Cards)": {
+      "main": [
+        [
+          {
+            "node": "Build Card URLs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Card URLs": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Remove Duplicates (by UPC)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request (Book Card)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request (Book Card)": {
+      "main": [
+        [
+          {
+            "node": "HTML Extract (Book Details)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML Extract (Book Details)": {
+      "main": [
+        [
+          {
+            "node": "Clean & Type Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clean & Type Fields": {
+      "main": [
+        [
+          {
+            "node": "Wait (Politeness Delay)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait (Politeness Delay)": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Remove Duplicates (by UPC)": {
+      "main": [
+        [
+          {
+            "node": "Convert to CSV",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "cf7d2199-5731-498a-be75-30f8b6ec28c9",
+  "meta": {
+    "instanceId": "cb6c27a0e1104b495f0d052270fe7c5d59e14e0b4369a2aaeee35d41d377771f"
+  },
+  "nodeGroups": [],
+  "id": "Lc4p4s1Tv6iS46Sd",
+  "tags": []
+}
