@@ -1,0 +1,210 @@
+{
+  "name": "Lab6",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1,
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "node-schedule-1",
+      "name": "Schedule Trigger (Daily 08:00)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const rawRecords = [{\"book_id_raw\": \"1000\", \"title_raw\": \"A Light in the Attic\", \"category_raw\": \"Poetry\", \"price_raw\": \"£51.77\", \"availability_raw\": \"In stock (22 available)\", \"rating_raw\": \"star-rating Three\", \"upc_raw\": \"a897fe39b1053632\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:00+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"999\", \"title_raw\": \"Tipping the Velvet\", \"category_raw\": \"Historical Fiction\", \"price_raw\": \"£53.74\", \"availability_raw\": \"In stock (20 available)\", \"rating_raw\": \"star-rating One\", \"upc_raw\": \"90fa61229261140a\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/tipping-the-velvet_999/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:02+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"998\", \"title_raw\": \"Soumission\", \"category_raw\": \"Fiction\", \"price_raw\": \"£50.10\", \"availability_raw\": \"In stock (20 available)\", \"rating_raw\": \"star-rating One\", \"upc_raw\": \"6957f44c3847a760\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/soumission_998/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:04+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"997\", \"title_raw\": \"Sharp Objects\", \"category_raw\": \"Mystery\", \"price_raw\": \"£47.82\", \"availability_raw\": \"In stock (20 available)\", \"rating_raw\": \"star-rating Four\", \"upc_raw\": \"e00eb4fd7b871a48\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/sharp-objects_997/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:06+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"996\", \"title_raw\": \"Sapiens: A Brief History of Humankind\", \"category_raw\": \"History\", \"price_raw\": \"£54.23\", \"availability_raw\": \"In stock (20 available)\", \"rating_raw\": \"star-rating Five\", \"upc_raw\": \"4165285e1663650f\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/sapiens-a-brief-history-of-humankind_996/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:08+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"995\", \"title_raw\": \"The Requiem Red\", \"category_raw\": \"Young Adult\", \"price_raw\": \"£22.65\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating One\", \"upc_raw\": \"f77dbf2323deb740\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/the-requiem-red_995/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:10+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"994\", \"title_raw\": \"The Dirty Little Secrets of Getting Your Dream Job\", \"category_raw\": \"Business\", \"price_raw\": \"£33.34\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating Four\", \"upc_raw\": \"2597b5a345f45e1b\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/the-dirty-little-secrets-of-getting-your-dream-job_994/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:12+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"993\", \"title_raw\": \"The Coming Woman: A Novel Based on the Life of the Infamous Feminist, Victoria Woodhull\", \"category_raw\": \"Default\", \"price_raw\": \"£17.93\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating Three\", \"upc_raw\": \"e72a5dfc7e9267b2\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/the-coming-woman-a-novel-based-on-the-life-of-the-infamous-feminist-victoria-woodhull_993/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:14+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"992\", \"title_raw\": \"The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics\", \"category_raw\": \"Default\", \"price_raw\": \"£22.60\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating Four\", \"upc_raw\": \"e10e1e165dc8be4a\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/the-boys-in-the-boat-nine-americans-and-their-epic-quest-for-gold-at-the-1936-berlin-olympics_992/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:16+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"991\", \"title_raw\": \"The Black Maria\", \"category_raw\": \"Poetry\", \"price_raw\": \"£52.15\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating One\", \"upc_raw\": \"1dfe412b8ac00530\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/the-black-maria_991/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:18+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"990\", \"title_raw\": \"Starving Hearts (Triangular Trade Trilogy, #1)\", \"category_raw\": \"Default\", \"price_raw\": \"£13.99\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating Two\", \"upc_raw\": \"0312262ecafa5a40\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/starving-hearts-triangular-trade-trilogy-1_990/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:20+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"989\", \"title_raw\": \"Shakespeare's Sonnets\", \"category_raw\": \"Poetry\", \"price_raw\": \"£20.66\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating Four\", \"upc_raw\": \"30a7f60cd76ca58c\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/shakespeares-sonnets_989/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:22+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"988\", \"title_raw\": \"Set Me Free\", \"category_raw\": \"Young Adult\", \"price_raw\": \"£17.46\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating Five\", \"upc_raw\": \"ce6396b0f23f6ecc\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/set-me-free_988/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:24+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"987\", \"title_raw\": \"Scott Pilgrim's Precious Little Life (Scott Pilgrim #1)\", \"category_raw\": \"Sequential Art\", \"price_raw\": \"£52.29\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating Five\", \"upc_raw\": \"3b1c02bac2a429e6\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/scott-pilgrims-precious-little-life-scott-pilgrim-1_987/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:26+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"986\", \"title_raw\": \"Rip it Up and Start Again\", \"category_raw\": \"Music\", \"price_raw\": \"£35.02\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating Five\", \"upc_raw\": \"a34ba96d4081e6a4\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/rip-it-up-and-start-again_986/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:28+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"985\", \"title_raw\": \"Our Band Could Be Your Life: Scenes from the American Indie Underground, 1981-1991\", \"category_raw\": \"Music\", \"price_raw\": \"£57.25\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating Three\", \"upc_raw\": \"deda3e61b9514b83\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/our-band-could-be-your-life-scenes-from-the-american-indie-underground-1981-1991_985/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:30+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"984\", \"title_raw\": \"Olio\", \"category_raw\": \"Poetry\", \"price_raw\": \"£23.88\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating One\", \"upc_raw\": \"feb7cc7701ecf901\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/olio_984/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:32+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"983\", \"title_raw\": \"Mesaerion: The Best Science Fiction Stories 1800-1849\", \"category_raw\": \"Science Fiction\", \"price_raw\": \"£37.59\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating One\", \"upc_raw\": \"e30f54cea9b38190\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/mesaerion-the-best-science-fiction-stories-1800-1849_983/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:34+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"982\", \"title_raw\": \"Libertarianism for Beginners\", \"category_raw\": \"Politics\", \"price_raw\": \"£51.33\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating Two\", \"upc_raw\": \"a18a4f574854aced\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/libertarianism-for-beginners_982/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:36+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"981\", \"title_raw\": \"It's Only the Himalayas\", \"category_raw\": \"Travel\", \"price_raw\": \"£45.17\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating Two\", \"upc_raw\": \"a22124811bfa8350\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/its-only-the-himalayas_981/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:38+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"980\", \"title_raw\": \"The Golden Chronicles\", \"category_raw\": \"Fiction\", \"price_raw\": \"£42.15\", \"availability_raw\": \"In stock (9 available)\", \"rating_raw\": \"star-rating One\", \"upc_raw\": \"005986dc638a0af7\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/the-golden-chronicles_980/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-2.html\", \"_collected_at\": \"2026-11-18T14:12:00+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"979\", \"title_raw\": \"The Secret Symphony: An Introduction\", \"category_raw\": \"Young Adult\", \"price_raw\": \"£22.62\", \"availability_raw\": \"In stock (4 available)\", \"rating_raw\": \"star-rating Two\", \"upc_raw\": \"989312854c1ccb8d\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/the-secret-symphony-an-introduction_979/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-2.html\", \"_collected_at\": \"2026-11-18T14:12:02+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"978\", \"title_raw\": \"The Northern Horizon\", \"category_raw\": \"Music\", \"price_raw\": \"£43.99\", \"availability_raw\": \"In stock (3 available)\", \"rating_raw\": \"star-rating Five\", \"upc_raw\": \"be1ff82d99d1d419\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/the-northern-horizon_978/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-2.html\", \"_collected_at\": \"2026-11-18T14:12:04+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"977\", \"title_raw\": \"The Hidden Kingdom (Vol. 1)\", \"category_raw\": \"Travel\", \"price_raw\": \"£39.72\", \"availability_raw\": \"In stock (1 available)\", \"rating_raw\": \"star-rating One\", \"upc_raw\": \"2046d062e5ea6b2d\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/the-hidden-kingdom-vol-1_977/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-2.html\", \"_collected_at\": \"2026-11-18T14:12:06+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"976\", \"title_raw\": \"The Bright Archive\", \"category_raw\": \"Philosophy\", \"price_raw\": \"£15.14\", \"availability_raw\": \"In stock (17 available)\", \"rating_raw\": \"star-rating Two\", \"upc_raw\": \"8ec5b497d3b56825\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/the-bright-archive_976/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-2.html\", \"_collected_at\": \"2026-11-18T14:12:08+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"975\", \"title_raw\": \"The Southern Clockwork: History and Practice\", \"category_raw\": \"Biography\", \"price_raw\": \"£40.29\", \"availability_raw\": \"In stock (7 available)\", \"rating_raw\": \"star-rating Five\", \"upc_raw\": \"962b2e381dd12b3c\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/the-southern-clockwork-history-and-practice_975/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-2.html\", \"_collected_at\": \"2026-11-18T14:12:10+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"974\", \"title_raw\": \"The Lost Letters: A Novel\", \"category_raw\": \"Poetry\", \"price_raw\": \"£45.94\", \"availability_raw\": \"In stock (14 available)\", \"rating_raw\": \"star-rating Five\", \"upc_raw\": \"0f427221195a3b21\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/the-lost-letters-a-novel_974/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-2.html\", \"_collected_at\": \"2026-11-18T14:12:12+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"973\", \"title_raw\": \"The Shadow Harbor: Field Notes\", \"category_raw\": \"Mystery\", \"price_raw\": \"£21.41\", \"availability_raw\": \"In stock (9 available)\", \"rating_raw\": \"star-rating Five\", \"upc_raw\": \"65a94f5d198be836\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/the-shadow-harbor-field-notes_973/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-2.html\", \"_collected_at\": \"2026-11-18T14:12:14+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"972\", \"title_raw\": \"The Winter Citadel: Selected Essays\", \"category_raw\": \"Business\", \"price_raw\": \"£50.56\", \"availability_raw\": \"In stock (6 available)\", \"rating_raw\": \"star-rating One\", \"upc_raw\": \"8f788bd097edcfcc\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/the-winter-citadel-selected-essays_972/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-2.html\", \"_collected_at\": \"2026-11-18T14:12:16+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"971\", \"title_raw\": \"The Midnight Garden\", \"category_raw\": \"Science Fiction\", \"price_raw\": \"£45.05\", \"availability_raw\": \"In stock (9 available)\", \"rating_raw\": \"star-rating Three\", \"upc_raw\": \"002b653e8b1bdd58\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/the-midnight-garden_971/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-2.html\", \"_collected_at\": \"2026-11-18T14:12:18+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"970\", \"title_raw\": \"The Iron Theorem: An Introduction\", \"category_raw\": \"Thriller\", \"price_raw\": \"£18.19\", \"availability_raw\": \"In stock (4 available)\", \"rating_raw\": \"star-rating Three\", \"upc_raw\": \"9f9f8b70a12b8537\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/the-iron-theorem-an-introduction_970/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-2.html\", \"_collected_at\": \"2026-11-18T14:12:20+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"969\", \"title_raw\": \"The Summer Labyrinth\", \"category_raw\": \"Classics\", \"price_raw\": \"£15.09\", \"availability_raw\": \"In stock (12 available)\", \"rating_raw\": \"star-rating One\", \"upc_raw\": \"f2adfe22180a3acd\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/the-summer-labyrinth_969/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-2.html\", \"_collected_at\": \"2026-11-18T14:12:22+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": false}, {\"book_id_raw\": \"995\", \"title_raw\": \"The Requiem Red\", \"category_raw\": \"Young Adult\", \"price_raw\": \"£22.65\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating One\", \"upc_raw\": \"f77dbf2323deb740\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/the-requiem-red_995/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:10:10+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": true}, {\"book_id_raw\": \"988\", \"title_raw\": \"     \", \"category_raw\": \"Young Adult\", \"price_raw\": \"£17.46\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating Five\", \"upc_raw\": \"deadbeef00000001\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/set-me-free_988/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:27:01+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": true}, {\"book_id_raw\": \"987\", \"title_raw\": \"Scott Pilgrim's Precious Little Life (Scott Pilgrim #1)\", \"category_raw\": \"Sequential Art\", \"price_raw\": \"£52.29\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating Five\", \"upc_raw\": \"\", \"detail_url_raw\": \"\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:27:02+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": true}, {\"book_id_raw\": \"986\", \"title_raw\": \"Rip it Up and Start Again\", \"category_raw\": \"Music\", \"price_raw\": \"Цена по запросу\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating Five\", \"upc_raw\": \"deadbeef00000002\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/rip-it-up-and-start-again_986/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:27:03+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": true}, {\"book_id_raw\": \"985\", \"title_raw\": \"Our Band Could Be Your Life: Scenes from the American Indie Underground, 1981-1991\", \"category_raw\": \"Music\", \"price_raw\": \"£-14.50\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating Three\", \"upc_raw\": \"deadbeef00000003\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/our-band-could-be-your-life-scenes-from-the-american-indie-underground-1981-1991_985/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:27:04+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": true}, {\"book_id_raw\": \"984\", \"title_raw\": \"Olio\", \"category_raw\": \"Poetry\", \"price_raw\": \"£23.88\", \"availability_raw\": \"In stock (0 available)\", \"rating_raw\": \"star-rating One\", \"upc_raw\": \"deadbeef00000004\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/olio_984/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:27:05+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": true}, {\"book_id_raw\": \"983\", \"title_raw\": \"Mesaerion: The Best Science Fiction Stories 1800-1849\", \"category_raw\": \"Science Fiction\", \"price_raw\": \"£37.59\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating Seven\", \"upc_raw\": \"deadbeef00000005\", \"detail_url_raw\": \"https://books.toscrape.com/catalogue/mesaerion-the-best-science-fiction-stories-1800-1849_983/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:27:06+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": true}, {\"book_id_raw\": \"982\", \"title_raw\": \"Libertarianism for Beginners\", \"category_raw\": \"Politics\", \"price_raw\": \"£51.33\", \"availability_raw\": \"In stock (19 available)\", \"rating_raw\": \"star-rating Two\", \"upc_raw\": \"deadbeef00000006\", \"detail_url_raw\": \"books.toscrape.com/catalogue/broken-link/index.html\", \"_source\": \"books_toscrape_html\", \"_source_url\": \"https://books.toscrape.com/catalogue/page-1.html\", \"_collected_at\": \"2026-11-18T14:27:07+00:00\", \"_parser_version\": \"books-bs4/2.0\", \"_status\": 200, \"_is_synthetic_dirty\": true}];\nconst cleanStr = (v) => v ? String(v).normalize('NFKC').replace(/[\\u00a0\\u200b-\\u200d\\ufeff]/g, ' ').replace(/\\s+/g, ' ').trim() : null;\nreturn rawRecords.map(r => {\n  const title = cleanStr(r.title_raw);\n  const category = cleanStr(r.category_raw);\n  const upc = cleanStr(r.upc_raw);\n  const book_key = upc ? `upc:${upc.toLowerCase()}` : null;\n  const priceStr = cleanStr(r.price_raw);\n  const priceNum = priceStr ? parseFloat(priceStr.replace(/[^\\d.-]/g, '')) : null;\n  const source_url = r.detail_url_raw ? String(r.detail_url_raw).split('?')[0] : null;\n  return {\n    json: {\n      book_key,\n      author_key: 'unknown_toscrape',\n      title,\n      category,\n      price: Number.isFinite(priceNum) ? priceNum : null,\n      source: r._source,\n      source_url,\n      collected_at: r._collected_at\n    }\n  };\n});"
+      },
+      "id": "node-normalize-3",
+      "name": "Code: Normalize 4 Fields & Business Key",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        520,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "compare": "selectedFields",
+        "fieldsToCompare": "book_key",
+        "options": {}
+      },
+      "id": "node-dedup-4",
+      "name": "Remove Duplicates (by book_key)",
+      "type": "n8n-nodes-base.removeDuplicates",
+      "typeVersion": 1.1,
+      "position": [
+        800,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cond-1",
+              "leftValue": "={{ $json.book_key }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            },
+            {
+              "id": "cond-2",
+              "leftValue": "={{ $json.title }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            },
+            {
+              "id": "cond-3",
+              "leftValue": "={{ $json.price }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            },
+            {
+              "id": "cond-4",
+              "leftValue": "={{ $json.source_url }}",
+              "rightValue": "http",
+              "operator": {
+                "type": "string",
+                "operation": "startsWith"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "node-filter-5",
+      "name": "IF: Validate Record",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1080,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "csv",
+        "options": {
+          "fileName": "nocode_result.csv"
+        }
+      },
+      "id": "node-export-valid-7",
+      "name": "Convert to File (Valid CSV)",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1360,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "csv",
+        "options": {
+          "fileName": "nocode_rejects.csv"
+        }
+      },
+      "id": "node-export-rejects-8",
+      "name": "Convert to File (Rejects CSV)",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1360,
+        420
+      ]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger (Daily 08:00)": {
+      "main": [
+        [
+          {
+            "node": "Code: Normalize 4 Fields & Business Key",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code: Normalize 4 Fields & Business Key": {
+      "main": [
+        [
+          {
+            "node": "Remove Duplicates (by book_key)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Remove Duplicates (by book_key)": {
+      "main": [
+        [
+          {
+            "node": "IF: Validate Record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF: Validate Record": {
+      "main": [
+        [
+          {
+            "node": "Convert to File (Valid CSV)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Convert to File (Rejects CSV)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": [
+    {
+      "name": "lab6"
+    },
+    {
+      "name": "variant2"
+    }
+  ]
+}

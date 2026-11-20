@@ -1,0 +1,6 @@
+﻿book_key,author_key,title,category,price,source,source_url,collected_at
+upc:deadbeef00000001,unknown_toscrape,,Young Adult,17.46,books_toscrape_html,https://books.toscrape.com/catalogue/set-me-free_988/index.html,2026-11-18T14:27:01+00:00
+,unknown_toscrape,Scott Pilgrim's Precious Little Life (Scott Pilgrim #1),Sequential Art,52.29,books_toscrape_html,,2026-11-18T14:27:02+00:00
+upc:deadbeef00000002,unknown_toscrape,Rip it Up and Start Again,Music,,books_toscrape_html,https://books.toscrape.com/catalogue/rip-it-up-and-start-again_986/index.html,2026-11-18T14:27:03+00:00
+upc:deadbeef00000003,unknown_toscrape,"Our Band Could Be Your Life: Scenes from the American Indie Underground, 1981-1991",Music,-14.5,books_toscrape_html,https://books.toscrape.com/catalogue/our-band-could-be-your-life-scenes-from-the-american-indie-underground-1981-1991_985/index.html,2026-11-18T14:27:04+00:00
+upc:deadbeef00000006,unknown_toscrape,Libertarianism for Beginners,Politics,51.33,books_toscrape_html,books.toscrape.com/catalogue/broken-link/index.html,2026-11-18T14:27:07+00:00
