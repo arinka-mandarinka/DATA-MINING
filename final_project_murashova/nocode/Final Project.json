@@ -1,0 +1,155 @@
+{
+  "name": "Final Project",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 3
+            }
+          ]
+        }
+      },
+      "id": "7b1c83c9-5eba-4008-ad8a-611f55c2b48f",
+      "name": "Schedule Trigger (Daily 03:00)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        96
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://127.0.0.1:8000/run_report_20261124T081314Z.json",
+        "options": {}
+      },
+      "id": "8feeb208-b4a7-4a3f-b619-b8309f76a76d",
+      "name": "Fetch Run Report (HTTP)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        96
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.quality.verdict }}",
+              "value2": "GREEN"
+            }
+          ]
+        }
+      },
+      "id": "508b513c-0a34-4878-b7f5-3f909fc53276",
+      "name": "IF Quality GREEN",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        496,
+        96
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "notification",
+              "value": "=OK: Pipeline run {{ $json.run_id }} finished with verdict {{ $json.quality.verdict }} (clean={{ $json.records.clean }}, enriched={{ $json.records.enriched }})"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7ce543f5-1bad-4d3f-9e5a-29dbc07c1b3b",
+      "name": "Log Success Notification",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        768,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "alert",
+              "value": "=ALERT: Pipeline run {{ $json.run_id }} status={{ $json.status }}, verdict={{ $json.quality.verdict }}, alerts={{ ($json.alerts || []).length }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d78f1387-a218-4e17-aa18-13ad4d1dd15a",
+      "name": "Log Alert Notification",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        768,
+        224
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger (Daily 03:00)": {
+      "main": [
+        [
+          {
+            "node": "Fetch Run Report (HTTP)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Run Report (HTTP)": {
+      "main": [
+        [
+          {
+            "node": "IF Quality GREEN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF Quality GREEN": {
+      "main": [
+        [
+          {
+            "node": "Log Success Notification",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Log Alert Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "7cd56a24-b9c7-4cc6-abae-dcd1bd9434cd",
+  "meta": {
+    "instanceId": "cb6c27a0e1104b495f0d052270fe7c5d59e14e0b4369a2aaeee35d41d377771f"
+  },
+  "nodeGroups": [],
+  "id": "uS6vvaqr3ElnogVD",
+  "tags": []
+}

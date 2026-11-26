@@ -1,0 +1,77 @@
+{
+  "run_id": "20261124T082612Z",
+  "started_at": "2026-11-24T08:26:12.755006+00:00",
+  "finished_at": "2026-11-24T08:26:57.822635+00:00",
+  "duration_sec": 45.07,
+  "status": "DEGRADED_CIRCUIT_BREAKER",
+  "incremental": false,
+  "http_summary": {
+    "requests_total": 0,
+    "status_counts": {},
+    "errors_total": 0,
+    "error_rate": 0.0,
+    "retries_total": 0,
+    "latency_median_ms": 0.0,
+    "latency_p95_ms": 0.0,
+    "bytes_received": 0
+  },
+  "sources": {
+    "books_html": {
+      "collected_records": 0,
+      "skipped_304": 0,
+      "http_metrics": {}
+    },
+    "openlibrary_api": {
+      "collected_records": 0,
+      "http_metrics": {}
+    }
+  },
+  "records": {
+    "collected_html": 0,
+    "collected_api": 0,
+    "clean": 1000,
+    "rejected": 0,
+    "enriched": 154
+  },
+  "quality": {
+    "verdict": "GREEN",
+    "enriched_books_count": 154,
+    "checks": {
+      "min_clean_records": {
+        "value": 1000,
+        "threshold": 500,
+        "passed": true
+      },
+      "max_reject_rate": {
+        "value": 0.0,
+        "threshold": 0.05,
+        "passed": true
+      },
+      "max_null_price_rate": {
+        "value": 0.0,
+        "threshold": 0.01,
+        "passed": true
+      },
+      "max_null_rating_rate": {
+        "value": 0.0,
+        "threshold": 0.01,
+        "passed": true
+      },
+      "max_duplicate_rate": {
+        "value": 0.0,
+        "threshold": 0.0,
+        "passed": true
+      },
+      "min_enrichment_rate": {
+        "value": 0.154,
+        "threshold": 0.15,
+        "passed": true
+      }
+    }
+  },
+  "mart": {
+    "mart_books_enriched": 1000,
+    "mart_category_summary": 50
+  },
+  "alerts": []
+}

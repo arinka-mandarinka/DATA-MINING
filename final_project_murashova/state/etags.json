@@ -1,0 +1,326 @@
+{
+  "https://books.toscrape.com/": {
+    "etag": "\"63e40de8-c85e\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/travel_2/index.html": {
+    "etag": "\"63e40de8-9091\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/mystery_3/index.html": {
+    "etag": "\"63e40de8-c4d4\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/mystery_3/page-2.html": {
+    "etag": "\"63e40de8-9685\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/historical-fiction_4/index.html": {
+    "etag": "\"63e40de8-c3bd\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/historical-fiction_4/page-2.html": {
+    "etag": "\"63e40de8-7157\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/sequential-art_5/index.html": {
+    "etag": "\"63e40de8-c8ff\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/sequential-art_5/page-2.html": {
+    "etag": "\"63e40de8-c7dd\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/sequential-art_5/page-3.html": {
+    "etag": "\"63e40de8-c8c0\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/sequential-art_5/page-4.html": {
+    "etag": "\"63e40de8-ab40\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/classics_6/index.html": {
+    "etag": "\"63e40de8-bb02\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/philosophy_7/index.html": {
+    "etag": "\"63e40de8-90a8\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/romance_8/index.html": {
+    "etag": "\"63e40de8-c4dd\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/romance_8/page-2.html": {
+    "etag": "\"63e40de8-a68c\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/womens-fiction_9/index.html": {
+    "etag": "\"63e40de8-b0fc\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/fiction_10/index.html": {
+    "etag": "\"63e40de8-c20d\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/fiction_10/page-2.html": {
+    "etag": "\"63e40de8-c166\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/fiction_10/page-3.html": {
+    "etag": "\"63e40de8-c12d\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/fiction_10/page-4.html": {
+    "etag": "\"63e40de8-6b20\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/childrens_11/index.html": {
+    "etag": "\"63e40de8-c2c8\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/childrens_11/page-2.html": {
+    "etag": "\"63e40de8-83fc\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/religion_12/index.html": {
+    "etag": "\"63e40de8-78d5\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/nonfiction_13/index.html": {
+    "etag": "\"63e40de8-cdf5\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/nonfiction_13/page-2.html": {
+    "etag": "\"63e40de8-ccf0\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/nonfiction_13/page-3.html": {
+    "etag": "\"63e40de8-ccb1\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/nonfiction_13/page-4.html": {
+    "etag": "\"63e40de8-cd3a\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/nonfiction_13/page-5.html": {
+    "etag": "\"63e40de8-cb93\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/nonfiction_13/page-6.html": {
+    "etag": "\"63e40de8-8a25\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/music_14/index.html": {
+    "etag": "\"63e40de8-9d01\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/default_15/index.html": {
+    "etag": "\"63e40de8-c912\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/default_15/page-2.html": {
+    "etag": "\"63e40de8-c6aa\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/default_15/page-3.html": {
+    "etag": "\"63e40de8-c688\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/default_15/page-4.html": {
+    "etag": "\"63e40de8-c816\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/default_15/page-5.html": {
+    "etag": "\"63e40de8-c753\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/default_15/page-6.html": {
+    "etag": "\"63e40de8-c498\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/default_15/page-7.html": {
+    "etag": "\"63e40de8-c5ec\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/default_15/page-8.html": {
+    "etag": "\"63e40de8-9417\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/science-fiction_16/index.html": {
+    "etag": "\"63e40de8-ad9f\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/sports-and-games_17/index.html": {
+    "etag": "\"63e40de8-6ba6\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/add-a-comment_18/index.html": {
+    "etag": "\"63e40de8-c6f3\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/add-a-comment_18/page-2.html": {
+    "etag": "\"63e40de8-c3c7\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/add-a-comment_18/page-3.html": {
+    "etag": "\"63e40de8-c730\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/add-a-comment_18/page-4.html": {
+    "etag": "\"63e40de8-7659\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/fantasy_19/index.html": {
+    "etag": "\"63e40de8-c830\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/fantasy_19/page-2.html": {
+    "etag": "\"63e40de8-c68f\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/fantasy_19/page-3.html": {
+    "etag": "\"63e40de8-7dd2\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/new-adult_20/index.html": {
+    "etag": "\"63e40de8-703c\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/young-adult_21/index.html": {
+    "etag": "\"63e40de8-c3f7\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/young-adult_21/page-2.html": {
+    "etag": "\"63e40de8-c45c\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/young-adult_21/page-3.html": {
+    "etag": "\"63e40de8-9fbd\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/science_22/index.html": {
+    "etag": "\"63e40de8-a633\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/poetry_23/index.html": {
+    "etag": "\"63e40de8-bc4f\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/paranormal_24/index.html": {
+    "etag": "\"63e40de8-5389\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/art_25/index.html": {
+    "etag": "\"63e40de8-7c19\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/psychology_26/index.html": {
+    "etag": "\"63e40de8-78f8\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/autobiography_27/index.html": {
+    "etag": "\"63e40de8-810a\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/parenting_28/index.html": {
+    "etag": "\"63e40de8-53f4\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/adult-fiction_29/index.html": {
+    "etag": "\"63e40de8-5381\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/humor_30/index.html": {
+    "etag": "\"63e40de8-8ad6\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/horror_31/index.html": {
+    "etag": "\"63e40de8-adde\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/history_32/index.html": {
+    "etag": "\"63e40de8-c096\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/food-and-drink_33/index.html": {
+    "etag": "\"63e40de8-d36c\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/food-and-drink_33/page-2.html": {
+    "etag": "\"63e40de8-8e9e\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/christian-fiction_34/index.html": {
+    "etag": "\"63e40de8-705f\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/business_35/index.html": {
+    "etag": "\"63e40de8-985e\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/biography_36/index.html": {
+    "etag": "\"63e40de8-6d54\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/thriller_37/index.html": {
+    "etag": "\"63e40de8-8ce3\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/contemporary_38/index.html": {
+    "etag": "\"63e40de8-5f19\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/spirituality_39/index.html": {
+    "etag": "\"63e40de8-73d1\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/academic_40/index.html": {
+    "etag": "\"63e40de8-536f\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/self-help_41/index.html": {
+    "etag": "\"63e40de8-6d5d\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/historical_42/index.html": {
+    "etag": "\"63e40de8-598c\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/christian_43/index.html": {
+    "etag": "\"63e40de8-6056\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/suspense_44/index.html": {
+    "etag": "\"63e40de8-5372\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/short-stories_45/index.html": {
+    "etag": "\"63e40de8-5310\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/novels_46/index.html": {
+    "etag": "\"63e40de8-53d0\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/health_47/index.html": {
+    "etag": "\"63e40de8-6680\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/politics_48/index.html": {
+    "etag": "\"63e40de8-608d\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/cultural_49/index.html": {
+    "etag": "\"63e40de8-5315\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/erotica_50/index.html": {
+    "etag": "\"63e40de8-5300\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  },
+  "https://books.toscrape.com/catalogue/category/books/crime_51/index.html": {
+    "etag": "\"63e40de8-53f5\"",
+    "last_modified": "Wed, 08 Feb 2023 21:02:32 GMT"
+  }
+}
